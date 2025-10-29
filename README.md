@@ -29,12 +29,30 @@ A Model Context Protocol (MCP) server for interacting with the Raindrop.io API. 
 
 ## Installation
 
+### Option 1: Easy Install with MCPB (Recommended)
+
+The easiest way to install this MCP server is using the MCP Bundle (MCPB) file with Claude Desktop:
+
+1. **Download** the `raindrop-mcp-server.mcpb` file from this repository
+2. **Double-click** the file (or drag it into Claude Desktop)
+3. **Enter your API token** when prompted - get it from https://app.raindrop.io/settings/integrations
+
+That's it! The bundle contains everything needed and will automatically configure itself in Claude Desktop.
+
+### Option 2: Manual Installation
+
+If you prefer manual installation or are using a different MCP client:
+
 ```bash
 cd raindrop-mcp-server
 npm install
 ```
 
+Then proceed with the manual configuration below.
+
 ## Configuration
+
+### Manual Configuration (Skip if using MCPB)
 
 ### 1. Get Your Raindrop.io API Token
 
@@ -217,10 +235,30 @@ The Raindrop.io API allows up to **120 requests per minute** per authenticated u
 - `RateLimit-Remaining`
 - `X-RateLimit-Reset`
 
+## About MCP Bundles (MCPB)
+
+This project includes an **MCP Bundle** (`.mcpb` file) for simplified installation. MCPB is a standardized format for packaging MCP servers with all their dependencies and configuration metadata.
+
+**Benefits of using MCPB:**
+- **One-click installation** in Claude Desktop
+- **No manual configuration** of paths or dependencies
+- **Self-contained** - includes all node_modules and code
+- **Automatic updates** - easier to distribute new versions
+- **User-friendly** - prompts for required configuration (like API tokens)
+
+The `.mcpb` file is essentially a zip archive containing:
+- Server source code
+- All npm dependencies
+- A `manifest.json` with metadata and configuration schema
+- License and documentation
+
+Learn more about MCP Bundles: https://github.com/anthropics/mcpb
+
 ## Documentation
 
 - [Raindrop.io API Documentation](https://developer.raindrop.io/)
 - [MCP Protocol Documentation](https://modelcontextprotocol.io/)
+- [MCP Bundle Specification](https://github.com/anthropics/mcpb)
 
 ## License
 
